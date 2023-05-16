@@ -48,6 +48,17 @@ fig, axs = plt.subplots(1, 2, figsize=(4,2),layout="constrained")
 axs[0].plot(np.arange(10))
 axs[1].plot(np.arange(10), label='this is a plot')
 
-axs[1].legend(loc='center left', bbox_to_anchor=(0.8,0.5))
+leg = axs[1].legend(loc='center left', bbox_to_anchor=(0.8,0.5))
+#this is usefull to have the legend outside the plot but seen in saveimage
+leg.set_in_layout(False)
 
+leg.set_in_layout(True)
+fig.set_layout_engine(None)
+
+# padding and spacing
+
+fig,axs =plt.subplots(2,2, layout="constrained")
+for ax in axs.flat:
+    example_plot(ax, hide_labels=True)
+fig.get_layout_engine().set(w_pad=4 / 72, h_pad= 4 / 72, hspace=0, wspace=0)
 plt.show()
