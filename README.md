@@ -1,2 +1,3 @@
 # matplotplib_examples
-examples from the matplotlib tutorials
+examples from the matplotlib tutorials for animation 
+
